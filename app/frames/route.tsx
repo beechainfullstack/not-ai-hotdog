@@ -18,6 +18,8 @@ const handleRequest = frames(async (ctx) => {
   'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Skyline_Chili_Coneys.jpg/320px-Skyline_Chili_Coneys.jpg'
   ][pageIndex % totalPages];
 
+  const animationClass = ctx.searchParams.guess === 'hot' ? 'animate-hot' : (ctx.searchParams.guess === 'not' ? 'animate-not-hot' : '');
+
   return {
     image: (
       <div tw="flex flex-col">
